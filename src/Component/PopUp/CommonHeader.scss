@@ -1,11 +1,12 @@
+.CommonHeader{
+  .library-heading {
+    display: flex;
+    align-items: center;
 
- .ant-modal-root{
-   .search-icon{
-     img{
-       width: 10px;
-     }
-   }
- }
-.search-icon{
-  width: 19px;
+    .library1 {
+      margin-left: 12px;
+    }
+  }
+  .Search-field {
+  }
 }
