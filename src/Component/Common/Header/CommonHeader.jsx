@@ -5,22 +5,7 @@ import { Input } from 'antd';
 import './CommonHeader.scss'
 
 
-const CommonHeader = (props) => {
-    const {tital,img} = props;
-    useEffect(()=>{
-        setVisible(true);
-    },[])
-    const [visible,setVisible] = useState(false);
-
-    const showModal = () => {
-        setVisible(true);
-    }
-    const handleOk = (e) => {
-        setVisible(false);
-    }
-    const handleCancel = (e) => {
-        setVisible(false);
-    }
+const CommonHeader = () => {
     return (
         <div className="CommonHeader">
             <div className="library-heading">
@@ -32,7 +17,7 @@ const CommonHeader = (props) => {
             </div>
             <div><a href="#">Drag and drop a block into  your flow</a></div>
             <div className="Search-field">
-                <Input suffix={<SearchOutlined />} />
+                <Input placeholder="search" suffix={<SearchOutlined />} />
             </div>
         </div>
 

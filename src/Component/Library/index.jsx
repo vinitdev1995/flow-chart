@@ -5,7 +5,7 @@ import {option} from './ListOption';
 import "./Library.scss";
 
 const Library = (props) => {
-   const [isSelect, setSelec] = useState([]);
+   const [isSelect, setSelec] = useState('');
     useEffect(()=>{
         setVisible(true);
     },[]);
@@ -20,8 +20,11 @@ const Library = (props) => {
     const handleCancel = (e) => {
         setVisible(false);
     };
-    const handelSelect = () =>{
-
+    const handelSelect = (item) =>{
+        console.log("onclick clickes");
+        setSelec(item);
+        console.log("item",item);
+        console.log("isSeelect",isSelect);
     }
     return (
         <div className="Library">
@@ -39,7 +42,7 @@ const Library = (props) => {
                 {
                     option.map((item,index)=>{
                         return(
-                            <div className="listOption" onClick={handelSelect}>
+                            <div className={`listOption ${(item.title === isSelect) && 'selected'} `} onClick={()=>{handelSelect(item.title)}}>
                                 <p>{item.title}</p>
                             </div>
                         )
