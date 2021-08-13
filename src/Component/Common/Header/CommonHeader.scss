@@ -1,13 +1,52 @@
 .CommonHeader{
+  //background: aqua;
+}
+.common-header-modal {
+  background-color: hsl(0, 0%, 99%);
   .library-heading {
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: 13px;
+    .anticon-global{
+      position: absolute;
+      font-size: 12px;
+      left: 7px;
+      color: #fff;
+    }
+    .outline{
+      width: 26px;
+      height: 25px;
+      background: #0066ff;
+      border-radius: 50%;
+    }
 
     .library1 {
-      margin-left: 12px;
+      margin-left: 10px;
     }
   }
+  .span-color{
+    margin: 15px 0px;
+    color: #4d94ff;
+  }
   .Search-field {
+    box-shadow: -1px 13px 41px 1px #e3e8ec;
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    //border: 2px solid #bfbfbf;
+    border-radius: 8px;
+    .ant-input-affix-wrapper:hover,.ant-input-affix-wrapper:focus{
+        border: 1px solid #d9d9d9 !important;
+    }
+    .ant-input-affix-wrapper{
+      //border: none;
+      border-radius: 8px;
+    }
+    .anticon-search{
+      color: #4d94ff;
+    }
   }
 }
