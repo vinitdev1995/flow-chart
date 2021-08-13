@@ -8,17 +8,44 @@
   .ant-modal{
     width: 350px !important;
     .ant-modal-body{
+      #custom-scroll::-webkit-scrollbar-track
+      {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+      }
+
+      #custom-scroll::-webkit-scrollbar
+      {
+        width: 5px;
+        background-color: #1890ff;
+      }
+
+      #custom-scroll::-webkit-scrollbar-thumb
+      {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgb(0,128,255);
+
+      }
+      .custom-scroll-class{
+        height: 270px !important;
+      }
       .option{
-        p{
-          padding: 10px 0px 10px 5px;
+        padding: 10px 0px 5px 5px;
+        .list{
+          height: 5px;
           cursor: pointer;
+        }
+        .selectedList{
+          font-size: 11px;
+          color: dodgerblue;
         }
         .selected{
           background-color: #e8e8e961;
           &:hover{
             background-color: #e8e8e961;
           }
-          p{
+          .list{
             font-weight: bold;
             padding: 10px 0 10px 5px;
           }

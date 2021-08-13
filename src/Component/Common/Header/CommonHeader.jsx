@@ -15,7 +15,7 @@ const CommonHeader = () => {
                     <h4>Library</h4>
                 </div>
             </div>
-            <div><a href="#">Drag and drop a block into  your flow</a></div>
+            <div className="span-color">Drag and drop a block into  your flow</div>
             <div className="Search-field">
                 <Input placeholder="search" suffix={<SearchOutlined />} />
             </div>

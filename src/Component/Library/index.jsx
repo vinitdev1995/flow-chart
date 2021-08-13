@@ -38,12 +38,14 @@ const Library = (props) => {
                 footer={null}
             >
             <CommonHeader/>
-            <div className="option">
+            <div className="option custom-scroll-class" style={{ overflowY: option.length <=4 ? "hidden" : "scroll",height: option.length <= 4?"auto":"482px" }}
+                 id="custom-scroll">
                 {
                     option.map((item,index)=>{
                         return(
                             <div className={`listOption ${(item.title === isSelect) && 'selected'} `} onClick={()=>{handelSelect(item.title)}}>
-                                <p>{item.title}</p>
+                                <p className="list">{item.title}</p>
+                                <p className="selectedList">New Blocks</p>
                             </div>
                         )
                     })
