@@ -28,14 +28,14 @@ const Library = (props) => {
     }
     return (
         <div className="Library">
-            <h1 onClick={showModal}>hi</h1>
+            // {/*<h1 onClick={showModal}>hi</h1>*/}
             <Modal
                 visible={visible}
-                onOk={handleOk}
-                onCancel={handleCancel}
+                cancelButtonProps={{ style: { display: 'none' }}}
+                okButtonProps={{ style: { display: 'none' }}}
                 wrapClassName={"common-header-modal"}
                 closable={false}
-                footer={null}
+                // footer={null}
             >
             <CommonHeader/>
             <div className="option custom-scroll-class" style={{ overflowY: option.length <=4 ? "hidden" : "scroll",height: option.length <= 4?"auto":"482px" }}
@@ -52,6 +52,7 @@ const Library = (props) => {
                 }
             </div>
             </Modal>
+
         </div>
 
     )
