@@ -36,18 +36,20 @@ const RegulerBlocks = (props) => {
                 // footer={null}
             >
                 <CommonHeader title="Reguler Blocks"/>
-                <div className="option custom-scroll-class" style={{ overflowY: option.length <=4 ? "hidden" : "scroll",height: option.length <= 4?"auto":"482px" }}
+                <div>
+                <div className="optionList custom-scroll-class" style={{ overflowY: option.length <=7 ? "hidden" : "scroll",height: option.length <= 4?"auto":"482px" }}
                      id="custom-scroll">
                     {
                         option.map((item,index)=>{
                             return(
                                 <div className={`listOption ${(item.title === isSelect) && 'selected'} `} onClick={()=>{handelSelect(item.title)}}>
-                                    <img src={item.img}/>
-                                    <p className="list">{item.title}</p>
+                                    <div className="img-box"><img src={item.img}/></div>
+                                    <div className="title-text"> <p className="list">{item.title}</p></div>
                                 </div>
                             )
                         })
                     }
+                </div>
                 </div>
             </Modal>
 

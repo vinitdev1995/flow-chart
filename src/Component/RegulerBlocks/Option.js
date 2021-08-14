@@ -1,18 +1,21 @@
-import img1 from "../../assets/images/search.png"
+import video from "../../assets/images/video.svg"
+import msg from "../../assets/images/msg.svg"
+import textIcon from "../../assets/images/textIcon.svg"
 
-export const imageOptions =[
-    {img1},
-    {img1},
-    {img1},
-    {img1},
-    {img1},
-    {img1},
-]
 export const option = [
-    {title:"Regular Blocks", img:img1},
-    {title:"Logic and Triggers",img:img1},
-    {title:"Subscription",img:img1},
-    {title:"Connect user to a human",img:img1},
-    {title:"Plugins",img:img1},
-    {title:"Plugins",img:img1}
+    {title:"text", img:textIcon},
+    {title:"video",img:video},
+    {title:"massege",img:msg},
+    {title:"text", img:textIcon},
+    {title:"video",img:video},
+    {title:"massege",img:msg},
+    {title:"text", img:textIcon},
+    {title:"video",img:video},
+    {title:"massege",img:msg},
+    {title:"text", img:textIcon},
+    {title:"video",img:video},
+    {title:"massege",img:msg},
+    {title:"text", img:textIcon},
+    {title:"video",img:video},
+
 ]
