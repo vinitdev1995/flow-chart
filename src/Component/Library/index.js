@@ -5,11 +5,12 @@ import {option} from './ListOption';
 import "./Library.scss";
 
 const Library = (props) => {
-   const [isSelect, setSelec] = useState('');
-    useEffect(()=>{
-        setVisible(true);
-    },[]);
-    const [visible,setVisible] = useState(false);
+    const {isSelect,setSelec,visible,setVisible}= props;
+   // const [isSelect, setSelec] = useState('');
+    // useEffect(()=>{
+    //     setVisible(true);
+    // },[]);
+    // const [visible,setVisible] = useState(false);
 
     const showModal = () => {
         setVisible(true);
@@ -28,7 +29,7 @@ const Library = (props) => {
     }
     return (
         <div className="Library">
-            // {/*<h1 onClick={showModal}>hi</h1>*/}
+            {/*<h1 onClick={showModal}>hi</h1>*/}
             <Modal
                 visible={visible}
                 cancelButtonProps={{ style: { display: 'none' }}}
@@ -37,7 +38,7 @@ const Library = (props) => {
                 closable={false}
                 // footer={null}
             >
-            <CommonHeader/>
+            <CommonHeader title="Library"/>
             <div className="option custom-scroll-class" style={{ overflowY: option.length <=4 ? "hidden" : "scroll",height: option.length <= 4?"auto":"482px" }}
                  id="custom-scroll">
                 {
