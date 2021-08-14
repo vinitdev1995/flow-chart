@@ -1,7 +1,11 @@
 .CommonHeader{
   //background: aqua;
+
 }
 .common-header-modal {
+  .back-arrow img{
+    width: 30px;
+  }
   background-color: hsl(0, 0%, 99%);
   .library-heading {
     display: flex;

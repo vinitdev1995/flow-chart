@@ -6,23 +6,15 @@ import "./Library.scss";
 
 const Library = (props) => {
     const {isSelect,setSelec,visible,setVisible,setVisibleBlock}= props;
-   // const [isSelect, setSelec] = useState('');
+   const [isSelected, setSelected] = useState(false);
     // useEffect(()=>{
     //     setVisible(true);
     // },[]);
     // const [visible,setVisible] = useState(false);
 
-    const showModal = () => {
-        setVisible(true);
-    };
-    const handleOk = (e) => {
-        setVisible(false);
-    };
-    const handleCancel = (e) => {
-        setVisible(false);
-    };
     const handelSelect = (item) =>{
-        console.log("onclick clickes");
+            setSelected(true)
+        console.log(setSelected);
         setSelec(item);
         switch (item) {
             case "Regular Blocks" :{
@@ -44,8 +36,10 @@ const Library = (props) => {
                 closable={false}
                 // footer={null}
             >
-            <CommonHeader title="Library"
-                          notLibrary={true}
+            <CommonHeader
+                title="Library"
+                notLibrary={true}
+                isSelected={visible}
             />
             <div className="option custom-scroll-class" style={{ overflowY: option.length <=4 ? "hidden" : "scroll",height: option.length <= 4?"auto":"482px" }}
                  id="custom-scroll">
