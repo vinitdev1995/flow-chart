@@ -5,7 +5,7 @@ import {option} from './ListOption';
 import "./Library.scss";
 
 const Library = (props) => {
-    const {isSelect,setSelec,visible,setVisible}= props;
+    const {isSelect,setSelec,visible,setVisible,setVisibleBlock}= props;
    // const [isSelect, setSelec] = useState('');
     // useEffect(()=>{
     //     setVisible(true);
@@ -24,6 +24,12 @@ const Library = (props) => {
     const handelSelect = (item) =>{
         console.log("onclick clickes");
         setSelec(item);
+        switch (item) {
+            case "Regular Blocks" :{
+                setVisibleBlock(true);
+            }
+
+        }
         console.log("item",item);
         console.log("isSeelect",isSelect);
     }
@@ -38,7 +44,9 @@ const Library = (props) => {
                 closable={false}
                 // footer={null}
             >
-            <CommonHeader title="Library"/>
+            <CommonHeader title="Library"
+                          notLibrary={true}
+            />
             <div className="option custom-scroll-class" style={{ overflowY: option.length <=4 ? "hidden" : "scroll",height: option.length <= 4?"auto":"482px" }}
                  id="custom-scroll">
                 {

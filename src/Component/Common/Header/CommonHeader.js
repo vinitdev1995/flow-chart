@@ -1,17 +1,16 @@
-import React,{useEffect,useState} from "react"
-import { Modal, Button } from 'antd';
+import React from "react"
 import { GlobalOutlined,SearchOutlined } from '@ant-design/icons';
 import { Input } from 'antd';
 import './CommonHeader.scss'
 
 
 const CommonHeader = (props) => {
-    const {title}=props;
+    const {title,notLibrary}=props;
     return (
         <div className="CommonHeader">
             <div className="library-heading">
                 <span className="outline"/>
-                <GlobalOutlined />
+                {notLibrary && <GlobalOutlined /> }
                 <div className="library1">
                     <h4>{title}</h4>
                 </div>
