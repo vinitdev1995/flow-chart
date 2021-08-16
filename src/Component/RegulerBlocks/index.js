@@ -5,7 +5,7 @@ import {option,imageOptions} from './Option';
 import "./RegulerBlocks.scss";
 
 const RegulerBlocks = (props) => {
-    const {visibleBlock,setVisibleBlock}= props;
+    const {visibleBlock,setVisibleBlock,setVisible,visible}= props;
     const [isSelect, setSelec] = useState('');
     // useEffect(()=>{
     //     setVisible(true);
@@ -35,7 +35,7 @@ const RegulerBlocks = (props) => {
                 closable={false}
                 // footer={null}
             >
-                <CommonHeader title="Reguler Blocks"/>
+                <CommonHeader title="Reguler Blocks" stateFlagSetter={setVisible} visible={visible} modelCloser={setVisibleBlock} visibleBlock={visibleBlock}/>
                 <div>
                 <div className="optionList custom-scroll-class" style={{ overflowY: option.length <=7 ? "hidden" : "scroll",height: option.length <= 4?"auto":"482px" }}
                      id="custom-scroll">

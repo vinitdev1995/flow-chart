@@ -3,13 +3,16 @@ import { GlobalOutlined,SearchOutlined , ArrowLeftOutlined } from '@ant-design/i
 import { Input } from 'antd';
 import BackArrow from '../../../assets/images/left-arrow.png'
 import './CommonHeader.scss'
+import {isVisible} from "bootstrap/js/src/util";
 
-
+const handelRedirect = (modelCloser) =>{
+    modelCloser(false);
+}
 const CommonHeader = (props) => {
-    const {title,notLibrary,isSelected}=props;
+    const {title,notLibrary,isSelected,stateFlagSetter,visible,modelCloser,visibleBlock}=props;
     return (
         <div className="CommonHeader">
-            {isSelected === true ? <></> : <div className='back-arrow'><img src={BackArrow} alt="left-arrow"/></div>}
+            {isSelected === true ? <></> : <div className='back-arrow'onClick={()=>{handelRedirect(modelCloser)}}><img src={BackArrow} alt="left-arrow"/></div>}
             <div className="library-heading">
                 {notLibrary && <span className="outline"/>}
                 {notLibrary && <GlobalOutlined /> }

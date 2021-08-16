@@ -12,15 +12,12 @@ const Library = (props) => {
     // },[]);
     // const [visible,setVisible] = useState(false);
 
-    const handelSelect = (item) =>{
-            setSelected(true)
-        console.log(setSelected);
-        setSelec(item);
+    const handelSelect = (item,index) =>{
+        setSelec(index);
         switch (item) {
             case "Regular Blocks" :{
                 setVisibleBlock(true);
             }
-
         }
         console.log("item",item);
         console.log("isSeelect",isSelect);
@@ -46,7 +43,7 @@ const Library = (props) => {
                 {
                     option.map((item,index)=>{
                         return(
-                            <div className={`listOption ${(item.title === isSelect) && 'selected'} `} onClick={()=>{handelSelect(item.title)}}>
+                            <div className={`listOption ${(index === isSelect) && 'selected'} `} onClick={()=>{handelSelect(item.title,index)}}>
                                 <p className="list">{item.title}</p>
                                 <p className="selectedList">New Blocks</p>
                             </div>
