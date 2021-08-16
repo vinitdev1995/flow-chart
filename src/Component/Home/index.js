@@ -5,7 +5,7 @@ import RegulerBlocks from "../RegulerBlocks/index"
 const Home =()=>{
     const [isSelect, setSelec] = useState('');
     const [visible,setVisible] = useState(false);
-    const [visibleBlock,setVisibleBlock] = useState(false);
+    // const [visibleBlock,setVisibleBlock] = useState(false);
     // useEffect(()=>{
     //     setVisible(true);
     // },[]);
@@ -16,11 +16,11 @@ const Home =()=>{
           <Library isSelect={isSelect}
                    setSelec={setSelec}
                    visible={visible}
-                   setVisibleBlock={setVisibleBlock}
+                   // setVisibleBlock={setVisibleBlock}
                    setVisible={setVisible}/>
-          <RegulerBlocks
-              visibleBlock={visibleBlock}
-              setVisibleBlock={setVisibleBlock}/>
+          {/*<RegulerBlocks*/}
+          {/*    visibleBlock={visibleBlock}*/}
+          {/*    setVisibleBlock={setVisibleBlock}/>*/}
       </>
   )
 }

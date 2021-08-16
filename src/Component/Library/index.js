@@ -3,10 +3,14 @@ import { Modal, Button } from 'antd';
 import CommonHeader from '../Common/Header/CommonHeader';
 import {option} from './ListOption';
 import "./Library.scss";
+import RegulerBlocks from "../RegulerBlocks";
 
 const Library = (props) => {
-    const {isSelect,setSelec,visible,setVisible,setVisibleBlock}= props;
+    const {isSelect,setSelec,visible,setVisible}= props;
    const [isSelected, setSelected] = useState(false);
+    const [visibleBlock,setVisibleBlock] = useState(false);
+    const [count, setCount] = useState("");
+    const [flag, setFlag] = useState("");
     // useEffect(()=>{
     //     setVisible(true);
     // },[]);
@@ -16,12 +20,18 @@ const Library = (props) => {
         setSelec(index);
         switch (item) {
             case "Regular Blocks" :{
+                // setVisibleBlock(true);
                 setVisibleBlock(true);
             }
         }
         console.log("item",item);
         console.log("isSeelect",isSelect);
-    }
+    };
+    const countSelect = (list, regular) =>{
+        setCount(list);
+        setFlag(regular);
+        return list;
+    };
     return (
         <div className="Library">
             {/*<h1 onClick={showModal}>hi</h1>*/}
@@ -45,14 +55,17 @@ const Library = (props) => {
                         return(
                             <div className={`listOption ${(index === isSelect) && 'selected'} `} onClick={()=>{handelSelect(item.title,index)}}>
                                 <p className="list">{item.title}</p>
-                                <p className="selectedList">New Blocks</p>
+                                <p className="selectedList">{flag === item.title ? count : 0} New Blocks</p>
                             </div>
                         )
                     })
                 }
             </div>
             </Modal>
-
+            <RegulerBlocks
+                visibleBlock={visibleBlock}
+                countSelect={countSelect}
+                setVisibleBlock={setVisibleBlock}/>
         </div>
 
     )
