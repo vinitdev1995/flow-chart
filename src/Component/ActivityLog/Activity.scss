@@ -1,0 +1,93 @@
+*{
+  margin: 0;
+  padding:0;
+}
+.App{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin:100px auto;
+  justify-content: center;
+  .container {
+    box-shadow: 0px 0px 65px 2px #808080ab;
+    box-sizing: border-box;
+    width: 61vw;
+    //height: 70vh;
+    padding: 0;
+
+    .header {
+      width: 100%;
+      background-color: #e4e4e4;
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+
+      .title {
+        font-size: 25px;
+        font-weight: 500;
+        margin: 1vh 0vh 2vh 6vh;
+      }
+    }
+
+    .ActivityBody {
+      margin: 16px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      //height: 90%;
+      margin-left: 14% !important;
+      overflow-scrolling: auto;
+      .ActivityItems {
+        width: 76%;
+        margin: 16px 0;
+        .vl {
+          border-left: 6px solid green;
+          height: 75px;
+        }
+        .time-details{
+          p{
+            margin-bottom: 0 !important;
+          }
+        }
+        .img-parent{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          //background-image: url('../../assets/images/ActivityLog/icons8-vertical-line-50.png');
+          .img-box {
+            //display: flex;
+            //align-items: center;
+            //justify-content: center;
+            .img {
+              border: 4px solid gray;
+              border-bottom-right-radius: 50px !important;
+              border-bottom-left-radius: 50px !important;
+              border-top-right-radius: 50px !important;
+              border-top-left-radius: 50px !important;
+              width: 40px;
+            }
+          }
+        }
+      display: flex;
+      flex-direction: row;
+        .activity-parent{
+             width: 100%;
+          .activityInfo {
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 10%;
+            font-size: 22px;
+            .name {
+              color: #4d94ff;
+            }
+          }
+          .time-details {
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 10%;
+          }
+        }
+    }
+  }
+  }
+}
