@@ -1,27 +1,32 @@
 import React,{useEffect,useState} from "react"
 import { Modal, Button } from 'antd';
 import CommonHeader from '../Common/Header/CommonHeader';
-import {option} from './ListOption';
+import {option} from '../Common/Options';
 import "./Library.scss";
 import RegulerBlocks from "../RegulerBlocks";
+import LogicAndTriggers from "../LogicAndTriggers";
 
 const Library = (props) => {
     const {isSelect,setSelec,visible,setVisible}= props;
-   const [isSelected, setSelected] = useState(false);
     const [visibleBlock,setVisibleBlock] = useState(false);
+    const [visibleBlocks,setVisibleBlocks] = useState(false);
     const [count, setCount] = useState("");
     const [flag, setFlag] = useState("");
-    // useEffect(()=>{
-    //     setVisible(true);
-    // },[]);
-    // const [visible,setVisible] = useState(false);
+
+    useEffect(()=>{
+        setVisible(true);
+    },[]);
 
     const handelSelect = (item,index) =>{
         setSelec(index);
         switch (item) {
             case "Regular Blocks" :{
-                // setVisibleBlock(true);
                 setVisibleBlock(true);
+                break;
+            }
+            case "Logic and Triggers" :{
+                setVisibleBlocks(true);
+                break;
             }
         }
         console.log("item",item);
@@ -34,7 +39,6 @@ const Library = (props) => {
     };
     return (
         <div className="Library">
-            {/*<h1 onClick={showModal}>hi</h1>*/}
             <Modal
                 visible={visible}
                 cancelButtonProps={{ style: { display: 'none' }}}
@@ -66,6 +70,12 @@ const Library = (props) => {
                 visibleBlock={visibleBlock}
                 countSelect={countSelect}
                 setVisibleBlock={setVisibleBlock}/>
+
+             <LogicAndTriggers
+                visibleBlocks={visibleBlocks}
+                countSelect={countSelect}
+                setVisibleBlocks={setVisibleBlocks}
+             />
         </div>
 
     )
