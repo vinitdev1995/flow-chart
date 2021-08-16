@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react"
 import { Modal, Button } from 'antd';
 import CommonHeader from '../Common/Header/CommonHeader';
-import {option,imageOptions} from './Option';
+import {ImageOption} from '../Common/Options';
 import "./RegulerBlocks.scss";
 
 const RegulerBlocks = (props) => {
@@ -34,10 +34,10 @@ const RegulerBlocks = (props) => {
             >
                 <CommonHeader title="Reguler Blocks" stateFlagSetter={setVisible} visible={visible} modelCloser={setVisibleBlock} visibleBlock={visibleBlock}/>
                 <div>
-                <div className="optionList custom-scroll-class" style={{ overflowY: option.length <=7 ? "hidden" : "scroll",height: option.length <= 4?"auto":"482px" }}
+                <div className="optionList custom-scroll-class" style={{ overflowY: ImageOption.length <=7 ? "hidden" : "scroll",height: ImageOption.length <= 4?"auto":"482px" }}
                      id="custom-scroll">
                     {
-                        option.map((item,index)=>{
+                        ImageOption.map((item,index)=>{
                             return(
                                 <div className={`listOption ${listGroup.includes(index) && 'selected'} `} onClick={()=>{handelSelect(index)}}>
                                     <div className="img-box"><img src={item.img}/></div>
