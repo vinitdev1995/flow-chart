@@ -7,21 +7,28 @@ import "./RegulerBlocks.scss";
 const RegulerBlocks = (props) => {
     const {visibleBlock,setVisibleBlock,setVisible,visible}= props;
     const [isSelect, setSelec] = useState('');
+    let listBlocks = [];
     // useEffect(()=>{
     //     setVisible(true);
     // },[]);
     // const [visible,setVisible] = useState(false);
-    const handelSelect = (item) =>{
+    const handelSelect = (index) =>{
         console.log("onclick clickes");
-        setSelec(item);
+        setSelec(index);
+        let result = listBlocks.filter((item)=>{
+            return item === index;
+        })
+        if(!result || listBlocks.length === 0){
+            // listBlocks.push(index);
+            listBlocks[listBlocks.length]= index;
+        }
+        console.log("listBlocks",listBlocks);
         // switch (item) {
         //     case "Regular Blocks" :{
         //         setVisibleBlock(true);
         //     }
         //
         // }
-        console.log("item",item);
-        console.log("isSeelect",isSelect);
     }
 
     return (
@@ -42,7 +49,7 @@ const RegulerBlocks = (props) => {
                     {
                         option.map((item,index)=>{
                             return(
-                                <div className={`listOption ${(item.title === isSelect) && 'selected'} `} onClick={()=>{handelSelect(item.title)}}>
+                                <div className={`listOption ${(index === isSelect) && 'selected'} `} onClick={()=>{handelSelect(index)}}>
                                     <div className="img-box"><img src={item.img}/></div>
                                     <div className="title-text"> <p className="list">{item.title}</p></div>
                                 </div>
