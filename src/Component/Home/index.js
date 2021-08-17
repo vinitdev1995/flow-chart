@@ -1,10 +1,7 @@
 import React,{useState} from "react"
 import Library from "../Library/index"
-import RegulerBlocks from "../RegulerBlocks/index"
 import ActivityLog from "../ActivityLog/ActivityLog";
 import FlowControl from "../FlowControl/index"
-import ActivityLog from "../ActivityLog/ActivityLog"
-import Chats from "../Common/Chats";
 import ChatsLogged from "../ChatsLogged/index";
 
 const Home =()=>{
