@@ -3,11 +3,12 @@ import { Modal, Button } from 'antd';
 import CommonHeader from '../Common/Header/CommonHeader';
 import {ImageOption} from '../Common/Options';
 import "./RegulerBlocks.scss";
-
+import corner from "../../assets/images/corner.svg"
 const RegulerBlocks = (props) => {
     const {visibleBlock,setVisibleBlock,setVisible,visible, countSelect}= props;
     const [isSelect, setSelect] = useState('');
     const [listGroup, setList] = useState([]);
+    const [data,setData] = useState(ImageOption);
     const handelSelect = (index) =>{
         console.log("onclick clickes");
         let listBlocks = [];
@@ -23,6 +24,9 @@ const RegulerBlocks = (props) => {
     const selectCount = () =>{
         countSelect(listGroup.length, "Regular Blocks");
     };
+    const FilterData = (serchData) =>{
+        setData(serchData);
+    }
     return (
         <div className="Reguler Blocks">
             {/*<h1 onClick={showModal}>hi</h1>*/}
@@ -34,12 +38,12 @@ const RegulerBlocks = (props) => {
                 closable={false}
                 // footer={null}
             >
-                <CommonHeader selectCount={selectCount} title="Reguler Blocks" stateFlagSetter={setVisible} visible={visible} modelCloser={setVisibleBlock} visibleBlock={visibleBlock}/>
+                <CommonHeader data={ImageOption} FilterData={FilterData} selectCount={selectCount} title="Reguler Blocks" stateFlagSetter={setVisible} visible={visible} modelCloser={setVisibleBlock} visibleBlock={visibleBlock}/>
                 <div>
                 <div className="optionList custom-scroll-class" style={{ overflowY: ImageOption.length <=7 ? "hidden" : "scroll",height: ImageOption.length <= 4?"auto":"482px" }}
                      id="custom-scroll">
                     {
-                        ImageOption.map((item,index)=>{
+                        data.map((item,index)=>{
                             return(
                                 <div className={`listOption ${listGroup.includes(index) && 'selected'} `} onClick={()=>{handelSelect(index)}}>
                                     <div className="img-box"><img src={item.img}/></div>
