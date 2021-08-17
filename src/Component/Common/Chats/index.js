@@ -1,6 +1,6 @@
 import React from "react"
 import './chats.scss'
-// import MoreVertIcon from '@material-ui/icons/MoreVert';
+import {MoreOutlined} from '@ant-design/icons';
 const Chats = (props) => {
     const {title,iconsTtexts,headerText,images,alt}=props;
     return (
@@ -9,9 +9,7 @@ const Chats = (props) => {
                 <img src={images} alt={alt}/>
                 <div className="button">
                     <button>Edit</button>
-                    <span>
-                        {/*<MoreVertIcon style={{color:"#bfbfbf",height:"17px"}}/>*/}
-                    </span>
+                    <MoreOutlined/>
                 </div>
             </div>
             <div className="chats-heading">

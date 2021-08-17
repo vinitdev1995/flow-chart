@@ -1,43 +1,43 @@
 .chats {}
-  .common-header-modal {
-    .img-button {
-      display: flex;
-      justify-content: space-between;
+.common-header-modal {
+  .img-button {
+    display: flex;
+    justify-content: space-between;
 
-      img {
-        width: 40px;
-        height: 40px;
-        background: #e6e6e6;
-        border-radius: 7px;
-        padding: 0px 6px;
-      }
-
-      button {
-        width: 45px;
-        height: 16px;
-        font-size: 10px;
-        font-weight: 700;
-        border: none;
-        background: #e6e6e6;
-        border-radius: 5px;
-      }
-
-      .anticon svg {
-        color: #8e7d7d;
-      }
+    img {
+      width: 40px;
+      height: 40px;
+      background: #e6e6e6;
+      border-radius: 7px;
+      padding: 0px 6px;
     }
 
-    .chats-heading {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      position: relative;
-      margin-top: 25px;
-      margin-bottom: 13px;
+    button {
+      width: 45px;
+      height: 16px;
+      font-size: 10px;
+      font-weight: 700;
+      border: none;
+      background: #e6e6e6;
+      border-radius: 5px;
     }
 
-    .span-color {
-      margin: 15px 0px;
-      color: #4d94ff;
+    .anticon svg {
+      color: #8e7d7d;
     }
   }
+
+  .chats-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: 13px;
+  }
+
+  .span-color {
+    margin: 15px 0px;
+    color: #4d94ff;
+  }
+}
