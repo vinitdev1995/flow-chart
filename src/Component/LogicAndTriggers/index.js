@@ -20,7 +20,10 @@ const LogicAndTriggers = (props) => {
             setList([...listGroup, index]);
         }
     };
-    countSelect(listGroup.length, "Logic and Triggers");
+    const selectCount = () =>{
+        countSelect(listGroup.length, "Logic and Triggers");
+    };
+
     return (
         <div className="Reguler Blocks">
             <Modal
@@ -30,7 +33,7 @@ const LogicAndTriggers = (props) => {
                 wrapClassName={"common-header-modal"}
                 closable={false}
             >
-                <CommonHeader title="Logic & Triggers" stateFlagSetter={setVisible} visible={visible} modelCloser={setVisibleBlocks} visibleBlock={visibleBlocks}/>
+                <CommonHeader title="Logic & Triggers" selectCount={selectCount} stateFlagSetter={setVisible} visible={visible} modelCloser={setVisibleBlocks} visibleBlock={visibleBlocks}/>
                 <div>
                     <div className="optionList custom-scroll-class" style={{ overflowY: ImageOption.length <=7 ? "hidden" : "scroll",height: ImageOption.length <= 4?"auto":"482px" }}
                          id="custom-scroll">

@@ -5,11 +5,13 @@ import BackArrow from '../../../assets/images/left-arrow.png'
 import './CommonHeader.scss'
 import {isVisible} from "bootstrap/js/src/util";
 
-const handelRedirect = (modelCloser) =>{
-    modelCloser(false);
-}
+
 const CommonHeader = (props) => {
-    const {title,notLibrary,isSelected,stateFlagSetter,visible,modelCloser,visibleBlock}=props;
+    const {title,notLibrary,isSelected,selectCount,visible,modelCloser,visibleBlock}=props;
+    const handelRedirect = (modelCloser) =>{
+        selectCount();
+        modelCloser(false);
+    };
     return (
         <div className="CommonHeader">
             {isSelected === true ? <></> : <div className='back-arrow'onClick={()=>{handelRedirect(modelCloser)}}><img src={BackArrow} alt="left-arrow"/></div>}

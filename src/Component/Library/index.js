@@ -10,13 +10,12 @@ const Library = (props) => {
     const {isSelect,setSelec,visible,setVisible}= props;
     const [visibleBlock,setVisibleBlock] = useState(false);
     const [visibleBlocks,setVisibleBlocks] = useState(false);
+    const [countValue, setCountValue] = useState({});
     const [count, setCount] = useState("");
     const [flag, setFlag] = useState("");
+    useEffect(() =>{
 
-    useEffect(()=>{
-        setVisible(true);
-    },[]);
-
+    }, [countValue]);
     const handelSelect = (item,index) =>{
         setSelec(index);
         switch (item) {
@@ -32,10 +31,14 @@ const Library = (props) => {
         console.log("item",item);
         console.log("isSeelect",isSelect);
     };
-    const countSelect = (list, regular) =>{
-        setCount(list);
-        setFlag(regular);
-        return list;
+
+    const countSelect = (list, title) =>{
+        if (list !== 0){
+            setCountValue({
+                ...countValue,
+                [title]: list
+            });
+        }
     };
     return (
         <div className="Library">
@@ -56,10 +59,15 @@ const Library = (props) => {
                  id="custom-scroll">
                 {
                     option.map((item,index)=>{
+
                         return(
                             <div className={`listOption ${(index === isSelect) && 'selected'} `} onClick={()=>{handelSelect(item.title,index)}}>
                                 <p className="list">{item.title}</p>
-                                <p className="selectedList">{flag === item.title ? count : 0} New Blocks</p>
+                                <p className="selectedList">{
+                                    Object.keys(countValue).map(key =>{
+                                        return key === item.title ? `${countValue[key]} New Blocks` : null
+                                    })
+                                } </p>
                             </div>
                         )
                     })

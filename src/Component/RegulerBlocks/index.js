@@ -20,7 +20,9 @@ const RegulerBlocks = (props) => {
             setList([...listGroup, index]);
         }
     };
-    countSelect(listGroup.length, "Regular Blocks");
+    const selectCount = () =>{
+        countSelect(listGroup.length, "Regular Blocks");
+    };
     return (
         <div className="Reguler Blocks">
             {/*<h1 onClick={showModal}>hi</h1>*/}
@@ -32,7 +34,7 @@ const RegulerBlocks = (props) => {
                 closable={false}
                 // footer={null}
             >
-                <CommonHeader title="Reguler Blocks" stateFlagSetter={setVisible} visible={visible} modelCloser={setVisibleBlock} visibleBlock={visibleBlock}/>
+                <CommonHeader selectCount={selectCount} title="Reguler Blocks" stateFlagSetter={setVisible} visible={visible} modelCloser={setVisibleBlock} visibleBlock={visibleBlock}/>
                 <div>
                 <div className="optionList custom-scroll-class" style={{ overflowY: ImageOption.length <=7 ? "hidden" : "scroll",height: ImageOption.length <= 4?"auto":"482px" }}
                      id="custom-scroll">
