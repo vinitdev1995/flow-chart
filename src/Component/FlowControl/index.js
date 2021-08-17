@@ -15,31 +15,26 @@ const FlowControl = () =>{
                 // footer={null}
             >
                 <div className="main-Body">
-                    <div className="img-box">
-                        <img src={messenger} />
-                    </div>
-                    <div className="">
-                        <div>
-                            <img src={messenger} />
-                        </div>
-                        <div>
-                            <div>
-                                Replay Me
-                            </div>
-                            <div>
-                                Text,Image
-                            </div>
-                        </div>
-                    </div>
-                    <div>
 
-                    </div>
+                       <div className="img-box">
+                           <img src={messenger} />
+                       </div>
                     <div>
+                       <span className="outer-box">
+                           <div className="innner-Box">
+                               <img src={messenger}/>
+                           </div>
+                           <div outer-text-box>
+                               <div>
+                                   Replay Me
+                               </div>
+                               <div>
+                                   Text,Image
+                               </div>
+                           </div>
+                       </span>
+                   </div>
 
-                    </div>
-                    <div>
-
-                    </div>
                 </div>
 
             </Modal>

@@ -8,6 +8,8 @@ const Home =()=>{
     const [isSelect, setSelec] = useState('');
     const [visible,setVisible] = useState(false);
     const [activity,setActivity] = useState(false);
+    const [chatsLog, setChatsLogs] = useState(false)
+    const [chatFlow, setChatFlow] = useState(false)
   return(
       <>
          {!activity && <h1 onClick={()=>setVisible(true)}>Hiii</h1>}

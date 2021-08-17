@@ -10,8 +10,7 @@ const LogicAndTriggers = (props) => {
     const [data,setData] = useState(ImageOption);
     const [listGroup, setList] = useState([]);
     const handelSelect = (index) =>{
-        console.log("onclick clickes");
-        let listBlocks = [];
+        // let listBlocks = [];
         const position = listGroup.indexOf(index);
         if (position >= 0){
             let array = [...listGroup];
