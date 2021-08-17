@@ -54,6 +54,7 @@ const Library = (props) => {
                 title="Library"
                 notLibrary={true}
                 isSelected={visible}
+                headerText={"a block"}
             />
             <div className="option custom-scroll-class" style={{ overflowY: option.length <=4 ? "hidden" : "scroll",height: option.length <= 4?"auto":"482px" }}
                  id="custom-scroll">

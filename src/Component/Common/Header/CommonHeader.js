@@ -7,7 +7,7 @@ import {isVisible} from "bootstrap/js/src/util";
 
 
 const CommonHeader = (props) => {
-    const {title,notLibrary,isSelected,selectCount,visible,modelCloser,visibleBlock}=props;
+    const {title,notLibrary,isSelected,selectCount,visible,modelCloser,headerText}=props;
     const handelRedirect = (modelCloser) =>{
         selectCount();
         modelCloser(false);
@@ -22,7 +22,7 @@ const CommonHeader = (props) => {
                     <h4>{title}</h4>
                 </div>
             </div>
-            <div className="span-color">Drag and drop a block into  your flow</div>
+            <div className="span-color">Drag and drop {headerText} into  your flow</div>
             <div className="Search-field">
                 <Input placeholder="search" suffix={<SearchOutlined />} />
             </div>

@@ -34,7 +34,7 @@ const RegulerBlocks = (props) => {
                 closable={false}
                 // footer={null}
             >
-                <CommonHeader selectCount={selectCount} title="Reguler Blocks" stateFlagSetter={setVisible} visible={visible} modelCloser={setVisibleBlock} visibleBlock={visibleBlock}/>
+                <CommonHeader selectCount={selectCount} title="Reguler Blocks" stateFlagSetter={setVisible} visible={visible} modelCloser={setVisibleBlock} visibleBlock={visibleBlock} headerText={"modules"}/>
                 <div>
                 <div className="optionList custom-scroll-class" style={{ overflowY: ImageOption.length <=7 ? "hidden" : "scroll",height: ImageOption.length <= 4?"auto":"482px" }}
                      id="custom-scroll">
