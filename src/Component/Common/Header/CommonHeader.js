@@ -1,9 +1,8 @@
 import React from "react"
-import { GlobalOutlined,SearchOutlined , ArrowLeftOutlined } from '@ant-design/icons';
+import { GlobalOutlined,SearchOutlined } from '@ant-design/icons';
 import { Input } from 'antd';
 import BackArrow from '../../../assets/images/left-arrow.png'
 import './CommonHeader.scss'
-import {isVisible} from "bootstrap/js/src/util";
 
 
 const CommonHeader = (props) => {
