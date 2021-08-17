@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react"
 import { Modal, Button } from 'antd';
 import CommonHeader from '../Common/Header/CommonHeader';
-import {option} from '../Common/Options';
+import {ImageOption, option} from '../Common/Options';
 import "./Library.scss";
 import RegulerBlocks from "../RegulerBlocks";
 import LogicAndTriggers from "../LogicAndTriggers";
@@ -11,13 +11,13 @@ const Library = (props) => {
     const [visibleBlock,setVisibleBlock] = useState(false);
     const [visibleBlocks,setVisibleBlocks] = useState(false);
     const [countValue, setCountValue] = useState({});
+    const [data,setData] = useState(option);
     const [count, setCount] = useState("");
     const [flag, setFlag] = useState("");
     useEffect(() =>{
 
     }, [countValue]);
-    const handelSelect = (item,index) =>{
-        setSelec(index);
+    const handelOpen = (item,index) =>{
         switch (item) {
             case "Regular Blocks" :{
                 setVisibleBlock(true);
@@ -28,10 +28,7 @@ const Library = (props) => {
                 break;
             }
         }
-        console.log("item",item);
-        console.log("isSeelect",isSelect);
     };
-
     const countSelect = (list, title) =>{
         if (list !== 0){
             setCountValue({
@@ -40,6 +37,9 @@ const Library = (props) => {
             });
         }
     };
+    const FilterData = (serchData) =>{
+        setData(serchData);
+    }
     return (
         <div className="Library">
             <Modal
@@ -52,17 +52,20 @@ const Library = (props) => {
             >
             <CommonHeader
                 title="Library"
+                data={option}
                 notLibrary={true}
                 isSelected={visible}
                 headerText={"a block"}
+                FilterData={FilterData}
             />
             <div className="option custom-scroll-class" style={{ overflowY: option.length <=4 ? "hidden" : "scroll",height: option.length <= 4?"auto":"482px" }}
                  id="custom-scroll">
                 {
-                    option.map((item,index)=>{
-
+                    data?.map((item,index)=>{
                         return(
-                            <div className={`listOption ${(index === isSelect) && 'selected'} `} onClick={()=>{handelSelect(item.title,index)}}>
+                            <div className={`listOption ${(index === isSelect) && 'selected'} `}
+                                 onClick={()=>setSelec(index)}
+                                 onDoubleClick={()=>{handelOpen(item.title,index)}} >
                                 <p className="list">{item.title}</p>
                                 <p className="selectedList">{
                                     Object.keys(countValue).map(key =>{
@@ -86,7 +89,6 @@ const Library = (props) => {
                 setVisibleBlocks={setVisibleBlocks}
              />
         </div>
-
     )
 }
 
